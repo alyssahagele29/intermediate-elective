@@ -3,3 +3,36 @@ title: "elective"
 format: pdf
 ---
 
+
+# Set Up 
+
+## Packages
+
+```{r}
+#| label: packages
+#| message: false
+#| warning: false
+
+# general use
+library(tidyverse)
+
+# file organization
+library(here)
+
+# data visualization
+library(naniar)
+library(patchwork)
+```
+
+## Data 
+```{r}
+#| label: data
+#| meassage: false 
+#| warning: false 
+
+veg <- read_csv(here("data", "veg copy-2.csv"))
+
+metadata <- read_csv(here("data", "vp_veg_metadata copy-2.csv"))
+```
+
+
