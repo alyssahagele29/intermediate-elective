@@ -22,6 +22,7 @@ library(here)
 # data visualization
 library(naniar)
 library(patchwork)
+library(gghighlight)
 ```
 
 ## Data 
@@ -81,6 +82,17 @@ pools_explicit0 <- veg |>
 
 ```
 
+```{r}
+#| label: visualization parameters needed
+#| message: false
+#| warning: false
+
+# plot parameters
+highlight_color <- "#4A9782"
+
+title_text <- "Native Percent Cover Across Vernal Pools"
+subtitle_text <- "Native vegetation cover through 2021-2025 across vernal pools"
+```
 
 ```{r}
 #| label: coding figure
