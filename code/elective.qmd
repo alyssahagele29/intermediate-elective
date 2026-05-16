@@ -23,6 +23,7 @@ library(here)
 library(naniar)
 library(patchwork)
 library(gghighlight)
+library(ggtext)
 ```
 
 ## Data 
@@ -87,11 +88,15 @@ pools_explicit0 <- veg |>
 #| message: false
 #| warning: false
 
-# plot parameters
+#plot parameters
+#setting mean percent cover color
 highlight_color <- "#4A9782"
 
+#create plot title 
 title_text <- "Native Percent Cover Across Vernal Pools"
+#create plot subtitle 
 subtitle_text <- "Native vegetation cover through 2021-2025 across vernal pools"
+
 ```
 
 ```{r}
@@ -99,7 +104,113 @@ subtitle_text <- "Native vegetation cover through 2021-2025 across vernal pools"
 #| message: false
 #| warning: false
 
+# creating plot for pools_explicit0
+p <- pools_explicit0 |>
+  #base layer: ggplot
+  #x axis is year, y axis is mean_pc
+  #color by transect_name
+  ggplot(aes(x = year,
+             y = mean_pc,
+             color = transect_name)) +
+  #first layer: lines
+  geom_line(linewidth = 1.3,
+            alpha = 0.9) +
+  #highlight pc line of interest (mean)
+  #remove direct labels 
+  #customize non highlighted lines / make lighter
+  gghighlight(
+    use_direct_label = FALSE,
+    unhighlighted_params = list(
+      linewidth = 0.3,
+      alpha = 0.75,
+      color = "gray60"
+    )
+  ) +
+  #each pool has same green color 
+scale_color_manual(
+  values = c(
+    "VP-01" = highlight_color,
+    "VP-02" = highlight_color,
+    "VP-03" = highlight_color,
+    "VP-04" = highlight_color,
+    "VP-05" = highlight_color,
+    "VP-06" = highlight_color,
+    "VP-07" = highlight_color,
+    "VP-08" = highlight_color
+  ),
+  #remove legend
+  guide = "none") +
+  #customize x axis breaks and spacing
+  scale_x_continuous(
+    breaks = seq(1980, 2020, 20),
+    expand = expansion(mult = c(0.01, 0.01))
+  ) +
+  #customize y axis spacing 
+  scale_y_continuous(
+    expand = expansion(mult = c(0, 0.1))
+  ) +
+  #adding title and subtitle 
+  #remove x axis title for each individual panel 
+  #adding y axis title 
+  labs(
+    title = title_text,
+    subtitle = subtitle_text,
+    x = NULL,
+    y = "Mean native percent cover"
+  ) +
+  #seperate panels per vernal pool 
+  facet_wrap(~ transect_name,
+             scales = "free_y",
+             ncol = 3) +
+  #custom theme
+  theme_bw() +
+#customize plot appearance
+theme(
+  plot.title = element_text(
+    size = rel(1.7),
+    family = "Helvetica",
+    face = "bold",
+    color = "gray20",
+    lineheight = 1.1,
+    margin = margin(t = 5, b = 5)
+  ),
+  #customize subtitle apperance
+  plot.subtitle = element_text(
+    size = rel(0.95),
+    family = "Helvetica",
+    color = alpha("gray40", 0.9),
+    lineheight = 1.2,
+    margin = margin(t = 5, b = 20)
+  ),
+  #customize caption appearance
+  plot.caption = element_markdown(
+    size = rel(0.65),
+    family = "Helvetica",
+    color = "gray40",
+    hjust = 0,
+    margin = margin(t = 15, b = 5, l = 0),
+    lineheight = 1.3
+  ),
+  # customize facet/panel text
+  strip.text = element_text(
+    size = 12,
+    face = "bold",
+    color = "gray20",
+    family = "Helvetica",
+    margin = margin(t = 5, b = 5)
+  ),
+  #customize facet background appearance
+  strip.background = element_rect(
+    fill = "gray95",
+    color = "white",
+    linewidth = 0.5
+  ),
+  #adjust spacing between panels
+  panel.spacing = unit(1.5, "lines")
+)
 
+#display plot
+p
 ```
 
 
