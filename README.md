@@ -14,6 +14,8 @@ library(ggtext)
 ```
 
 ## Data and file information
+
+```
 .
 ├── README.md
 ├── .gitignore
@@ -29,6 +31,7 @@ library(ggtext)
 │
 └── images
     └── electivepic.jpeg
+```
 
 ## Rendered output
 
