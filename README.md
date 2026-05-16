@@ -14,7 +14,7 @@ library(ggtext)
 ```
 
 ## Data and file information
-
+.
 ├── README.md
 ├── .gitignore
 ├── intermediate-elective.Rproj
