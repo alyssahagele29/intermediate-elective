@@ -35,4 +35,37 @@ veg <- read_csv(here("data", "veg copy-2.csv"))
 metadata <- read_csv(here("data", "vp_veg_metadata copy-2.csv"))
 ```
 
+# Problems
+
+## 1. Explain your inspiration 
+
+I chose to replicate the "Evolution of MTA Art Materials" by Steven Ponce. 
+I decided to use this figure because the different panels for material preferences
+translates well into different vernal pools. Furthermore, I want to demonstrate 
+native percent cover over time across different vernal pools, so the line plot 
+format seemed feasible and made sense for my project. The variables that I will
+use from the veg / metadata data frame are year (x-axis), transect_name (facet wrap) by transect_name), and mean native percent cover (y-axis). The mean percent cover for the vernal pool of focus will be represented by the green line from the figure while the grey lines will represent the other vernal pool's mean percent cover for comparison. 
+
+## 2. Plan your figure 
+
+
+## 3. Code your figure 
+
+```{r}
+#| label: figure
+#| message: false
+#| warning: false
+
+
+```
+
+
+
+
+
+
+
+
+
+
 
