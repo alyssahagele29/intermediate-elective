@@ -32,4 +32,4 @@ library(ggtext)
 
 ## Rendered output
 
-The rendered document for this repository is available [here]https://github.com/alyssahagele29/intermediate-elective/blob/main/code/elective.pdf
+The rendered document for this repository is available [here](https://github.com/alyssahagele29/intermediate-elective/blob/main/code/elective.pdf)
