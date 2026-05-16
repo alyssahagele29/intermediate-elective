@@ -1,4 +1,8 @@
-# intermediate-elective
+# Intermediate Elective Readme
+
+## Final visualization
+
+![](images/electivefig.png)
 
 ## General information
 
