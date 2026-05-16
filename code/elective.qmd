@@ -1,5 +1,5 @@
 ---
-title: "elective"
+title: "Intermediate Elective 2"
 author: "Alyssa Hagele"
 date: 2025-05-15
 format: pdf
@@ -223,7 +223,7 @@ p
 
 ## 4. Describe your process
 
-My process of using someone elses code included having to go through which objects I would need to duplicate and adding relevant libraries needed, then I copied and pasted the relevant code, then I copied and pasted the plot code needed. After I had to go through each line to revise it to include my own data frames / to use my pools_explicit0 object. I ran into a lot of challeneges, the most difficult was figuring out which objects I needed and what libraries I needed to make those objects. When I needed to customize my plot apperance in my coding figure section, I really couldn't figure out how to create the fonts object because I had no idea what library it was coming from even when asking chat gpt, so I replaced it with custom colors that were very similar to the graph. My plot differs from class visualizations because it definitely is a bit more complex, for example in each panel there is a mean percent cover line but also lines of every other panel that is shaded grey which improves readability when comparing different mean percent covers among vernal pools. 
+My process of using someone else's code included having to go through which objects I would need to duplicate and adding relevant libraries needed, then I copied and pasted the relevant code, then I copied and pasted the plot code needed. After I had to go through each line to revise it to include my own data frames / to use my pools_explicit0 object. I ran into a lot of challenges, the most difficult was figuring out which objects I needed and what libraries I needed to make those objects. When I needed to customize my plot appearance in my coding figure section, I really couldn't figure out how to create the fonts object because I had no idea what library it was coming from even when asking chat gpt, so I replaced it with custom colors that were very similar to the graph. My plot differs from class visualizations because it definitely is a bit more complex, for example in each panel there is a mean percent cover line but also lines of every other panel that is shaded grey which improves readability when comparing different mean percent covers among vernal pools. 
 
 
 
